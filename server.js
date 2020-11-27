@@ -26,14 +26,11 @@ app.use('/api', adminRoutes);
 app.use('/games', gameRoutes);
 
 const uri = process.env.DB_URI;
-mongoose.connect(
-  'mongodb+srv://admin:admin@cluster0.hjr9j.gcp.mongodb.net/V-Play?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  },
-);
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 const connection = mongoose.connection;
 connection.once('open', () => {
