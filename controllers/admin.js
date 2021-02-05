@@ -12,6 +12,7 @@ exports.getUserById = (req, res, next, id) => {
   });
 };
 
+//get particular User
 exports.getUser = (req, res) => {
   //these info not being hidden in DB,just user's profile can't see such sensitive info
   req.profile.salt = undefined;
